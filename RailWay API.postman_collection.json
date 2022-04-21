@@ -1,0 +1,484 @@
+{
+	"info": {
+		"_postman_id": "cf80880e-b16f-4453-8d5e-40bb447b220a",
+		"name": "RailWay API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register new user",
+			"item": [
+				{
+					"name": "Registering with existing email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mehdi\",\r\n    \"lastName\": \"Aqdim\",\r\n    \"email\": \"MehdiAqdim@gmail.com\",\r\n    \"password\": \"ajgdhb658\",\r\n    \"subscription\": \"yes\",\r\n    \"postalCode\": \"W1F4H5\",\r\n    \"province\": \"QUEBEC\",\r\n    \"country\": \"CANADA\",\r\n    \"phoneNumber\": \"438-624-3645\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registering with new email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Reza\",\r\n    \"lastName\": \"Shalchian\",\r\n    \"email\": \"reza.shalchian.2@gmail.com\",\r\n    \"password\": \"dr5g4dffd\",\r\n    \"subscription\": \"yes\",\r\n    \"postalCode\": \"J5E6G7\",\r\n    \"province\": \"QUEBEC\",\r\n    \"country\": \"CANADA\",\r\n    \"phoneNumber\": \"438-564-9720\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User login",
+			"item": [
+				{
+					"name": "Login correctly into account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"MehdiAqdim@gmail.com\",\r\n    \"password\" : \"ajgdhb658\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with wrong password",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"MehdiAqdim@gmail.com\",\r\n    \"password\" : \"uidhbfdvf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with unregistered email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"MehdiA@gmail.com\",\r\n    \"password\" : \"uidhbfdvf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get receipts of purchases by user id",
+			"item": [
+				{
+					"name": "Receipts of user with 3 puchases",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Receipts of user with no purchases",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get booked Tickets with confirmation nb",
+			"item": [
+				{
+					"name": "Booking with 3 tickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tickets?ConfirmationNb=MAX699",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "ConfirmationNb",
+									"value": "MAX699"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking with 4 tickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tickets?ConfirmationNb=YXG619",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "ConfirmationNb",
+									"value": "YXG619"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inexistant confirmation nb",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tickets?ConfirmationNb=YXG619",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "ConfirmationNb",
+									"value": "YXG619"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buy tickets",
+			"item": [
+				{
+					"name": "Buy tickets for 3 passengers for selected trip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"firstName\" : \"Saul\",\r\n        \"lastName\" : \"Goodman\",\r\n        \"ageCategory\" : \"Adult\"\r\n    },\r\n    {\r\n        \"firstName\" : \"Gustavo\",\r\n        \"lastName\" : \"Fring\",\r\n        \"ageCategory\" : \"Adult\"\r\n    },\r\n    {\r\n        \"firstName\" : \"Jesse\",\r\n        \"lastName\" : \"Pinkman\",\r\n        \"ageCategory\" : \"Child\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/1019/buy-tickets?TripNb=MO12162110&Class=Economy&PaymentMethod=Visa&SeatNb=46,47,48",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1019",
+								"buy-tickets"
+							],
+							"query": [
+								{
+									"key": "TripNb",
+									"value": "MO12162110"
+								},
+								{
+									"key": "Class",
+									"value": "Economy"
+								},
+								{
+									"key": "PaymentMethod",
+									"value": "Visa"
+								},
+								{
+									"key": "SeatNb",
+									"value": "46,47,48"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Try to buy tickets for full trip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"firstName\" : \"Saul\",\r\n        \"lastName\" : \"Goodman\",\r\n        \"ageCategory\" : \"Adult\"\r\n    },\r\n    {\r\n        \"firstName\" : \"Gustavo\",\r\n        \"lastName\" : \"Fring\",\r\n        \"ageCategory\" : \"Adult\"\r\n    },\r\n    {\r\n        \"firstName\" : \"Jesse\",\r\n        \"lastName\" : \"Pinkman\",\r\n        \"ageCategory\" : \"Child\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/1019/buy-tickets?TripNb=TW12252108&Class=Economy&PaymentMethod=Visa&SeatNb=46,47,48",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1019",
+								"buy-tickets"
+							],
+							"query": [
+								{
+									"key": "TripNb",
+									"value": "TW12252108"
+								},
+								{
+									"key": "Class",
+									"value": "Economy"
+								},
+								{
+									"key": "PaymentMethod",
+									"value": "Visa"
+								},
+								{
+									"key": "SeatNb",
+									"value": "46,47,48"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update account information",
+			"item": [
+				{
+					"name": "Update user account info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Reza\",\r\n    \"lastName\": \"Shalchian\",\r\n    \"email\": \"reza.new.email@gmail.com\",\r\n    \"password\": \"new.password\",\r\n    \"subscription\": \"yes\",\r\n    \"postalCode\": \"J5E6G7\",\r\n    \"province\": \"QUEBEC\",\r\n    \"country\": \"CANADA\",\r\n    \"phoneNumber\": \"438-564-9720\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/1020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1020"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cancel tickets",
+			"item": [
+				{
+					"name": "Cancel 1 booked ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cancel-tickets?TicketNb=347521345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cancel-tickets"
+							],
+							"query": [
+								{
+									"key": "TicketNb",
+									"value": "347521345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel 3 booked tickets at once",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cancel-tickets?TicketNb=124343468,393847561,124536475",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cancel-tickets"
+							],
+							"query": [
+								{
+									"key": "TicketNb",
+									"value": "124343468,393847561,124536475"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel a booking with all its tickets",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cancel-booking?ConfirmationNb=MIO987",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cancel-booking"
+							],
+							"query": [
+								{
+									"key": "ConfirmationNb",
+									"value": "MIO987"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
