@@ -112,7 +112,6 @@ A Spring Boot RESTful API for the train system database
 \---SQL scripts
         Data insertion.sql
         Tables and Views creation.sql
-        ```
 
 ## Endpoints test
 
