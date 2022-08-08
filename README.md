@@ -60,58 +60,11 @@ A Spring Boot RESTful API for the train system database
 |   |                   \---demo
 |   |                           WSprojectApplicationTests.java
 |   |
-|   \---target
-|       +---classes
-|       |   |   application.properties
-|       |   |
-|       |   \---com
-|       |       \---example
-|       |           \---demo
-|       |               |   WSprojectApplication.class
-|       |               |
-|       |               +---controller
-|       |               |       RailwayController.class
-|       |               |
-|       |               +---exception
-|       |               |       AccountNotUpdatedException.class
-|       |               |       DatabaseErrorException.class
-|       |               |       EmailAlreadyRegisteredException.class
-|       |               |       EmptyResultSetException.class
-|       |               |       NoAvailableSeatsException.class
-|       |               |       PassengerNotFoundException.class
-|       |               |       UnsuccessfulPaymentException.class
-|       |               |       UserNotFoundException.class
-|       |               |       WrongPasswordException.class
-|       |               |
-|       |               +---model
-|       |               |       LoginInfo.class
-|       |               |       Passenger.class
-|       |               |       Receipt.class
-|       |               |       ReceiptDAO.class
-|       |               |       Ticket.class
-|       |               |       Trip.class
-|       |               |       User.class
-|       |               |
-|       |               +---repository
-|       |               |       RailwayRepository.class
-|       |               |
-|       |               \---service
-|       |                       Generator.class
-|       |                       RailwayService.class
-|       |
-|       +---generated-sources
-|       |   \---annotations
-|       +---generated-test-sources
-|       |   \---test-annotations
-|       \---test-classes
-|           \---com
-|               \---example
-|                   \---demo
-|                           WSprojectApplicationTests.class
 |
 \---SQL scripts
         Data insertion.sql
         Tables and Views creation.sql
+```
 
 ## Endpoints test
 
