@@ -116,5 +116,5 @@ A Spring Boot RESTful API for the train system database
 
 ## Endpoints test
 
-[Postman collection](/SpringBoot-Train-System-API/RailWayAPI.postman_collection.json)
+[Postman collection](/RailWayAPI.postman_collection.json)
         
